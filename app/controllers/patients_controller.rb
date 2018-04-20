@@ -4,8 +4,16 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    if params[:name]
+      @patients = Patient.search(params[:name])
+    else
+      @patients = Patient.all
+      #Only lists available products (in cart counts as available)x
+    end
   end
+
+
+
 
   # GET /patients/1
   # GET /patients/1.json
@@ -60,6 +68,8 @@ class PatientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
