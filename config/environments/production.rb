@@ -2,8 +2,8 @@
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    # ...
-
+      config.action_mailer.perform_caching = false
+}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -92,5 +92,5 @@ config.serve_static_files = true
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-}
+
 end
