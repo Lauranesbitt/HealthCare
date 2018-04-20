@@ -4,7 +4,7 @@
   config.action_mailer.smtp_settings = {
       config.action_mailer.perform_caching = false
 }
-
+end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
